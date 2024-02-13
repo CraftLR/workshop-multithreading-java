@@ -1,0 +1,23 @@
+{
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.test.defaultConfig": "first",
+  "java.test.config": {
+    "name": "first",
+    "workingDirectory": "${workspaceFolder}",
+    "args": [],
+    "vmargs": [
+      "--add-exports",
+      "javafx.graphics/com.sun.javafx.application=ALL-UNNAMED",
+      "--add-reads",
+      "javafx.graphics=ALL-UNNAMED",
+      "--add-opens",
+      "javafx.graphics/com.sun.javafx.application=ALL-UNNAMED",
+      "--add-opens",
+      "javafx.base/com.sun.javafx.runtime=ALL-UNNAMED",
+      "--add-exports",
+      "javafx.graphics/com.sun.javafx.application=ALL-UNNAMED"
+    ],
+    "env": {}
+  },
+  "cSpell.language": "en,fr,fr-FR"
+}
