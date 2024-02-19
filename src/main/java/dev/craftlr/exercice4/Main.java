@@ -1,4 +1,5 @@
 package dev.craftlr.exercice4;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -6,12 +7,12 @@ public class Main {
     private static final Queue<String> queue = new LinkedList<>();
     private static final Object lock = new Object();
 
-    public static void main(String[] args) {
-        Thread producteur = new Thread(Main::produire);
-        Thread consommateur = new Thread(Main::consommer);
+    public static void main(String[] args) throws InterruptedException {
+        var producteur = Thread.ofPlatform().start(Main::produire);
+        var consommateur = Thread.ofPlatform().start(Main::consommer);
 
-        producteur.start();
-        consommateur.start();
+        producteur.join();
+        consommateur.join();
     }
 
     static void produire() {
@@ -26,9 +27,9 @@ public class Main {
                         return;
                     }
                 }
-                String tache = "Tâche " + System.currentTimeMillis();
+                String tache = STR."Tâche \{System.currentTimeMillis()}";
                 queue.add(tache);
-                System.out.println("Producteur a produit : " + tache);
+                System.out.println(STR."Producteur a produit : \{tache}");
                 lock.notifyAll(); // Réveille les threads consommateurs en attente
             }
 
@@ -41,7 +42,7 @@ public class Main {
             }
         }
     }
-    
+
     static void consommer() {
         while (true) { // Boucle infinie pour consommer des tâches continuellement
             synchronized (lock) {
@@ -55,7 +56,7 @@ public class Main {
                     }
                 }
                 String tache = queue.poll(); // Récupère et supprime la tâche en tête de file
-                System.out.println("Consommateur a traité : " + tache);
+                System.out.println(STR."Consommateur a traité : \{tache}");
                 lock.notifyAll(); // Notifie les producteurs en attente
             }
 
@@ -68,6 +69,6 @@ public class Main {
             }
         }
     }
-    
+
 }
 

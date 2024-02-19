@@ -24,26 +24,26 @@ public class Philosophe implements Runnable {
     }
 
     private void penser() {
-        System.out.println("Philosophe " + id + " pense.");
+        System.out.println(STR."Philosophe \{id} pense.");
         attendre();
     }
 
     private synchronized void prendreFourchettes() {
-        System.out.println("Philosophe " + id + " souhaite prendre les deux fourchettes.");
+        System.out.println(STR."Philosophe \{id} souhaite prendre les deux fourchettes.");
         gauche.prendre();
         droite.prendre();
-        System.out.println("Philosophe " + id + " a pris les deux fourchettes.");
+        System.out.println(STR."Philosophe \{id} a pris les deux fourchettes.");
     }
 
     private void manger() {
-        System.out.println("Philosophe " + id + " mange.");
+        System.out.println(STR."Philosophe \{id} mange.");
         attendre();
     }
 
     private synchronized void deposerFourchettes() {
         gauche.poser();
         droite.poser();
-        System.out.println("Philosophe " + id + " a reposé les deux fourchettes.");
+        System.out.println(STR."Philosophe \{id} a reposé les deux fourchettes.");
     }
 
     private void attendre() {

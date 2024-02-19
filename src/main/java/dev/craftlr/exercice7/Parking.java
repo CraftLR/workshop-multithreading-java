@@ -13,7 +13,7 @@ public class Parking {
     }
 
     static class Voiture implements Runnable {
-        private int id;
+        private final int id;
 
         public Voiture(int id) {
             this.id = id;
@@ -21,12 +21,12 @@ public class Parking {
 
         public void run() {
             try {
-                System.out.println("Voiture " + id + " cherche une place.");
+                System.out.println(STR."Voiture \{id} cherche une place.");
                 semaphore.acquire();
-                System.out.println("Voiture " + id + " se gare.");
+                System.out.println(STR."Voiture \{id} se gare.");
                 // Simuler le temps de stationnement
                 Thread.sleep((long) (Math.random() * 10000));
-                System.out.println("Voiture " + id + " quitte le parking.");
+                System.out.println(STR."Voiture \{id} quitte le parking.");
                 semaphore.release();
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();

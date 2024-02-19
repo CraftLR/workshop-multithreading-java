@@ -4,8 +4,8 @@ public class Main {
     private static final Object ressource1 = new Object();
     private static final Object ressource2 = new Object();
 
-    public static void main(String[] args) {
-        Thread t1 = new Thread(() -> {
+    public static void main(String[] args) throws InterruptedException {
+        var t1 = Thread.ofPlatform().start(() -> {
             synchronized (ressource1) {
                 System.out.println("Thread 1: Verrouillé ressource 1");
                 try {
@@ -19,7 +19,7 @@ public class Main {
             }
         });
 
-        Thread t2 = new Thread(() -> {
+        var t2 = Thread.ofPlatform().start(() -> {
             synchronized (ressource2) {
                 System.out.println("Thread 2: Verrouillé ressource 2");
                 try {
@@ -33,7 +33,7 @@ public class Main {
             }
         });
 
-        t1.start();
-        t2.start();
+        t1.join();
+        t2.join();
     }
 }

@@ -5,12 +5,12 @@ import java.util.concurrent.CountDownLatch;
 public class Main {
     private static final CountDownLatch latch = new CountDownLatch(1);
 
-    public static void main(String[] args) {
-        Thread threadDeChargement = new Thread(() -> chargerDonnees());
-        Thread threadDeTraitement = new Thread(() -> traiterDonnees());
+    public static void main(String[] args) throws InterruptedException {
+        var threadDeChargement = Thread.ofPlatform().start(Main::chargerDonnees);
+        var threadDeTraitement = Thread.ofPlatform().start(Main::traiterDonnees);
 
-        threadDeChargement.start();
-        threadDeTraitement.start();
+        threadDeChargement.join();
+        threadDeTraitement.join();
     }
 
     static void chargerDonnees() {
