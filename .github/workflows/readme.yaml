@@ -20,10 +20,10 @@ jobs:
         run: sudo gem install asciidoctor-reducer --pre
 
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Reduce readme
         run: asciidoctor-reducer -o README.adoc readme-source.adoc
 
       - name: Commit readme
-        uses: EndBug/add-and-commit@v8
+        uses: EndBug/add-and-commit@v9
