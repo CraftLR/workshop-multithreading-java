@@ -1,6 +1,11 @@
-:sourcedir: src/main/java
-
 = image:https://raw.githubusercontent.com/CraftLR/workshop-git/main/src/main/resources/assets/logo.png[class logo]
+
+:sourcedir: src/main/java
+:doctype: article
+:license-type: MIT
+:toc: preamble
+:author: Sébastien NEDJAR
+:email: sebastien.nedjar@univ-amu.fr
 
 == La Rochelle Software Craftsmenship
 
