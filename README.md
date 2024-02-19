@@ -51,7 +51,7 @@ Le workshop est divisé en plusieurs exercices pratiques, chacun construisant su
 
 La première chose à faire est de créer un fork de ce dépôt. Pour ce faire, rendez-vous sur le lien suivant :
 
-<https://classroom.github.com/a/GzMN5CJi>
+<https://classroom.github.com/a/w4OtoP9O>
 
 GitHub va vous créer un dépôt contenant un fork de ce dépôt. Vous apparaîtrez automatiquement comme contributeur de ce projet pour y pousser votre travail.
 
