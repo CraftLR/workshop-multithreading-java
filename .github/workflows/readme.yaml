@@ -1,17 +1,14 @@
 name: Build readme
 
-
 on:
-
   push:
     paths:
-      - readme-source.adoc
+      - src/docs/asciidoc/readme-source.adoc
     branches:
       - '**'
 
 
 jobs:
-
   build:
     timeout-minutes: 10
     runs-on: ubuntu-latest
@@ -23,7 +20,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Reduce readme
-        run: asciidoctor-reducer -o README.adoc readme-source.adoc
+        run: asciidoctor-reducer -o README.adoc src/docs/asciidoc/readme-source.adoc
 
       - name: Commit readme
         uses: EndBug/add-and-commit@v9

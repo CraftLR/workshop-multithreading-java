@@ -19,6 +19,9 @@
         <org.assertj.version>3.25.1</org.assertj.version>
         <com.approvaltests.approvaltests.version>22.3.3</com.approvaltests.approvaltests.version>
         <org.testfx.version>4.0.17</org.testfx.version>
+        <asciidoctor.maven.plugin.version>3.0.0</asciidoctor.maven.plugin.version>
+        <asciidoctorj.version>2.5.11</asciidoctorj.version>
+        <jruby.version>9.4.5.0</jruby.version>
     </properties>
 
     <dependencies>
@@ -100,12 +103,14 @@
 
     <build>
         <resources>
+
             <resource>
                 <directory>src/main/resources</directory>
                 <includes>
                     <include>**/*</include>
                 </includes>
             </resource>
+
             <resource>
                 <filtering>false</filtering>
                 <directory>src/main/java</directory>
@@ -113,8 +118,10 @@
                     <include>**/*.fxml</include>
                 </includes>
             </resource>
+
         </resources>
         <plugins>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -168,6 +175,53 @@
                     </argLine>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.asciidoctor</groupId>
+                <artifactId>asciidoctor-maven-plugin</artifactId>
+                <version>${asciidoctor.maven.plugin.version}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.jruby</groupId>
+                        <artifactId>jruby</artifactId>
+                        <version>${jruby.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.asciidoctor</groupId>
+                        <artifactId>asciidoctorj</artifactId>
+                        <version>${asciidoctorj.version}</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <sourceDirectory>src/docs/asciidoc</sourceDirectory>
+                    <baseDir>${project.basedir}</baseDir>
+                    <attributes>
+                        <sourcedir>${project.build.sourceDirectory}</sourcedir>
+                        <project-version>${project.version}</project-version>
+                    </attributes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>asciidoc-to-html</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>process-asciidoc</goal>
+                        </goals>
+                        <configuration>
+                            <backend>html5</backend>
+                            <attributes>
+                                <imagesdir>./images</imagesdir>
+                                <toc>left</toc>
+                                <icons>font</icons>
+                                <sectanchors>true</sectanchors>
+                                <idprefix/>
+                                <idseparator>-</idseparator>
+                                <docinfo1>true</docinfo1>
+                            </attributes>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
     </build>
 </project>
