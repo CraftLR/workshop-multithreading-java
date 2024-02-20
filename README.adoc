@@ -1,7 +1,8 @@
 = image:https://raw.githubusercontent.com/CraftLR/workshop-git/main/src/main/resources/assets/logo.png[class logo]
-
-:sourcedir: src/main/java
-:doctype: article
+:source-highlighter: rouge
+:rouge-style: github
+:source-language: java
+:sourcedir: ../../main/java
 :license-type: MIT
 :toc: preamble
 :author: Sébastien NEDJAR
