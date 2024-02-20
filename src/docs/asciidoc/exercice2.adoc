@@ -1,0 +1,43 @@
+:sourcedir: ../../main/java
+= Exercice 2 : Partage de Ressources entre Threads
+
+== Objectif
+
+Dans cet exercice, vous allez explorer le comportement des threads lorsqu'ils accèdent simultanément à une ressource partagée.
+Vous comprendrez concrètement ce qu'est une condition de compétition (race condition) et comment elle peut affecter le comportement d'un programme.
+
+== Contexte
+
+Lorsque plusieurs threads accèdent et modifient une même ressource (par exemple, une variable ou une structure de données), cela peut mener à des incohérences et des bugs difficiles à détecter si ces accès ne sont pas correctement gérés.
+C'est ce que l'on appelle une "condition de compétition".
+
+== Tâches à réaliser
+
+. *Création d'une ressource partagée :*
+** Définissez une variable partagée, par exemple un entier ou une liste, accessible par plusieurs threads.
+. *Modification concurrente :*
+** Créez plusieurs threads (au moins deux) qui modifient cette variable partagée.
+Par exemple, chaque thread peut incrémenter une variable partagée un certain nombre de fois.
+. *Observation des résultats :*
+** Après l'exécution des threads, examinez la valeur finale de la variable partagée.
+Est-elle celle attendue ?
+Sinon, pouvez-vous expliquer pourquoi ?
+
+Voici un exemple de code pour démarrer :
+
+[source,java]
+----
+include::{sourcedir}/dev/craftlr/exercice2/Main.java[lines=3..28]
+----
+
+== Questions de réflexion
+
+* Après avoir exécuté le programme plusieurs fois, observez-vous des variations dans la valeur finale de `variablePartagee` ?
+Pourquoi ?
+* Comment expliquez-vous ce comportement ?
+
+== Conclusion
+
+Cette activité vise à illustrer l'importance de la synchronisation dans les programmes multi-threads.
+Les variations inattendues dans les résultats sont dues à des accès concurrents non synchronisés à la même ressource, menant à des conditions de compétition.
+Dans le prochain exercice, vous apprendrez comment résoudre ce problème.

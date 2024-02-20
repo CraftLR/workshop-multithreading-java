@@ -1,0 +1,78 @@
+:sourcedir: ../../main/java
+
+= Exercice 4 : Synchronisation avec `Object`
+
+== Objectif
+
+Cet exercice vise à explorer un mécanisme de synchronisation avancé en utilisant les méthodes synchronisées et les méthodes `wait()`, `notify()`, et `notifyAll()` héritées de la classe `Object`.
+Vous apprendrez à créer des conditions de synchronisation complexes pour contrôler l'accès aux ressources partagées de manière plus fine.
+
+== Contexte
+
+En Java, chaque objet peut servir de moniteur pour synchroniser l'accès aux sections critiques.
+Les méthodes `wait()`, `notify()`, et `notifyAll()` permettent de gérer l'attente et le réveil des threads en fonction de conditions spécifiques, offrant ainsi une gestion fine de la concurrence.
+
+=== Fonctionnement des mécanismes de synchronisation
+
+L'utilisation des méthodes `wait()`, `notify()`, et `notifyAll()` nécessite que le thread courant détienne le verrou de l'objet sur lequel ces méthodes sont appelées, généralement à l'intérieur d'un bloc `synchronized`.
+
+=== Caractéristiques principales
+
+. *Exclusion mutuelle :*
+** Le bloc `synchronized` garantit qu'un seul thread à la fois peut accéder à la section critique.
+. *Attente et notification :*
+** `wait()` met le thread courant en attente jusqu'à ce qu'un autre thread appelle `notify()` ou `notifyAll()` sur le même objet.
+** `notify()` réveille un seul thread en attente sur cet objet.
+** `notifyAll()` réveille tous les threads en attente sur cet objet.
+
+=== Utilisation
+
+*Bloc synchronisé et attente :*
+
+[,java]
+----
+synchronized (objet) {
+    while (<condition n'est pas satisfaite>) {
+        objet.wait();
+    }
+    // Section critique
+}
+----
+
+*Notification :*
+
+[,java]
+----
+synchronized (objet) {
+    // Modifier la condition
+    objet.notify(); // ou objet.notifyAll();
+}
+----
+
+== Tâches à réaliser
+
+. *Créer un scénario de file d'attente de tâches :*
+** Implémentez une simulation de producteur-consommateur où un thread producteur crée des tâches et les ajoute à une file d'attente, et des threads consommateurs traitent ces tâches.
+. *Utiliser la synchronisation pour la file d'attente :*
+** Synchronisez l'accès à la file d'attente et utilisez `wait()` et `notify()` pour gérer les threads producteurs et consommateurs.
+. *Tester et observer le comportement :*
+** Assurez-vous que les consommateurs traitent les tâches lorsqu'elles sont disponibles et attendent autrement.
+
+Voici un squelette de base pour votre programme :
+
+[source,java]
+----
+include::{sourcedir}/dev/craftlr/exercice4/Main.java[lines=5..72]
+----
+
+== Questions de réflexion
+
+* Comment l'utilisation de `synchronized`, `wait()`, et `notify()` aide-t-elle à coordonner l'accès à la file d'attente entre producteurs et consommateurs ?
+* Quelle est la différence entre `notify()` et `notifyAll()` ?
+Dans quelles situations utiliseriez-vous l'un plutôt que l'autre ?
+* Si vous augmentez le nombre de producteurs qu'observez-vous ?
+* Si vous augmentez maintenant le nombre de consommateurs qu'observez-vous ?
+
+== Conclusion
+
+Cet exercice vous a introduit à la gestion avancée de la synchronisation, montrant comment utiliser `synchronized` avec `wait()` et `notify()` pour contrôler l'accès concurrent aux ressources partagées et coordonner les actions entre threads.

@@ -1,0 +1,71 @@
+= Exercice 1 : introduction aux threads
+:sourcedir: ../../main/java
+
+Cet exercice est conçu pour vous donner une première expérience pratique de la création et de la gestion de threads.
+
+== Objectif
+
+Votre tâche est de créer un programme simple qui lance plusieurs threads exécutant des tâches différentes en parallèle.
+Cet exercice vous aidera à comprendre comment les threads fonctionnent indépendamment au sein d'un même programme.
+
+=== Qu'est-ce qu'un thread ?
+
+Un thread, aussi appelé fil d'exécution, est une séquence d'instructions dans un programme qui peut être exécutée indépendamment des autres parties du programme.
+En informatique, les threads sont les plus petites unités d'exécution qui peuvent être gérées par un planificateur d'opérations, qui fait partie du système d'exploitation.
+
+=== Caractéristiques principales des threads
+
+* *Parallélisme :* Les threads permettent l'exécution parallèle de tâches.
+Dans un processeur multicœur, plusieurs threads peuvent s'exécuter simultanément sur différents cœurs.
+* *Partage de ressources :* Les threads d'un même processus partagent des ressources communes comme la mémoire et les variables.
+Cela facilite la communication entre les threads, mais introduit aussi la nécessité de synchroniser l'accès à ces ressources partagées.
+* *Légèreté :* Créer et gérer des threads est généralement moins coûteux en termes de ressources système que de créer et de gérer des processus.
+
+=== Utilisation des threads
+
+Les threads sont utilisés pour réaliser plusieurs tâches simultanément au sein d'une application.
+Par exemple :
+
+* Dans une application Web, différents threads peuvent gérer simultanément plusieurs requêtes d'utilisateurs.
+* Dans une application de bureau, un thread peut gérer l'interface utilisateur pendant qu'un autre effectue des calculs en arrière-plan.
+
+=== Programmation multi-thread
+
+La programmation multi-thread implique de créer et de gérer plusieurs threads pour exécuter des tâches en parallèle.
+Cela peut améliorer considérablement la performance et la réactivité des applications.
+Toutefois, elle présente des défis :
+
+* *Synchronisation :* Assurer que les threads accèdent de manière cohérente et sûre aux ressources partagées.
+* *Deadlocks :* Éviter les situations où plusieurs threads se bloquent mutuellement, attendant des ressources verrouillées par les autres.
+* *Famine :* Prévenir les cas où certains threads ne parviennent pas à accéder aux ressources nécessaires.
+
+=== Threads
+
+En Java, les threads peuvent être créés à l'aide de la classe `Thread` et de l'interface `Runnable`.
+Java fournit également un cadre de travail de concurrence plus abstrait avec le package `java.util.concurrent` qui offre des fonctionnalités avancées pour gérer le multithreading.
+
+== Tâches à réaliser
+
+. *Créer plusieurs threads :*
+** Écrivez un programme qui crée au moins deux threads.
+** Chaque thread doit exécuter une méthode statique distincte.
+. *Tâches des threads :*
+** Les méthodes exécutées par les threads se contenteront d'afficher un message sur la console.
+. *Observation :*
+** Observez comment les différents threads exécutent leurs tâches en parallèle.
+
+Voici un squelette de base pour votre programme :
+
+[source,java]
+----
+include::{sourcedir}/dev/craftlr/exercice1/Main.java[lines=3..40]
+----
+
+== Questions de réflexion
+
+* Comment les threads interagissent-ils avec la console ?
+* Avez-vous remarqué un ordre d'exécution particulier ou un modèle dans les sorties des threads ?
+
+== Conclusion
+
+Ce premier exercice vous permet de voir concrètement comment les threads peuvent s'exécuter en parallèle, chacun effectuant ses propres opérations de manière indépendante.

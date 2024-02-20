@@ -1,0 +1,34 @@
+=== Aperçu du workshop et objectifs d'apprentissage
+
+L'objectif de ce workshop est de découvrir la programmation multi-threads en Java.
+
+Il est conçu pour vous fournir une compréhension des concepts de programmation concurrente, cruciaux pour le développement de logiciels modernes, performants et fiables.
+Vous poursuivrez entre autre les objectifs suivants :
+
+. *Comprendre les threads :*
+** Apprendre ce qu'est un thread, comment il fonctionne et comment il peut être utilisé pour exécuter des tâches en parallèle.
+. *Pratiquer la programmation multi-thread :*
+** Acquérir des compétences pratiques en créant et en gérant des threads.
+. *Explorer la synchronisation :*
+** Comprendre l'importance de la synchronisation pour un accès sûr aux ressources partagées.
+. *Résoudre des problèmes de concurrence :*
+** Apprendre à identifier et à résoudre les problèmes courants en programmation concurrente, comme les deadlocks et la famine.
+
+Le workshop est divisé en plusieurs exercices pratiques, chacun construisant sur les connaissances acquises dans les précédents :
+
+. *Introduction aux threads :*
+** Comprendre les bases des threads.
+. *Partage de ressources entre threads :*
+** Observer et gérer les conditions de compétition.
+. *Utilisation des verrous pour la synchronisation :*
+** Apprendre à utiliser des verrous pour un accès sécurisé aux ressources.
+. *Synchronisation avec des moniteurs :*
+** Explorer des mécanismes de synchronisation avancés.
+. *Deadlocks et stratégies d'évitement :*
+** Identifier et éviter les deadlocks.
+. *Le dîner des philosophes :*
+** Appliquer les compétences acquises dans un scénario complexe.
+. *Gestion d'un parking avec sémaphores :*
+** Utiliser les sémaphores pour gérer l'accès à des ressources en nombre limité.
+. *Synchronisation de deux threads par rendez-vous :*
+** Apprendre à synchroniser plusieurs threads à un point de rendez-vous.

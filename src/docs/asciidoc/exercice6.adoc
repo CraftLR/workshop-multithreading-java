@@ -1,0 +1,50 @@
+
+:sourcedir: ../../main/java
+
+= Exercice 6 : Le Dîner des philosophes
+
+== Objectif
+
+Appliquez vos connaissances sur les threads et la synchronisation pour résoudre le problème classique en informatique : le dîner des philosophes.
+
+== Contexte
+
+Le problème du dîner des philosophes illustre les défis de synchronisation dans un environnement multi-thread.
+Il implique plusieurs philosophes qui alternent entre manger et penser, nécessitant deux fourchettes pour manger, partagées avec leurs voisins, pouvant mener à des deadlocks et/ou à la famine.
+
+== Tâches à réaliser
+
+. *Modéliser le scénario :*
+** Créez une classe `Philosophe` et une classe `Fourchette`.
+** Les philosophes doivent prendre les fourchettes à leur gauche et à leur droite pour manger.
+. *Implémenter la logique des philosophes :*
+** Implémentez la logique pour permettre aux philosophes de prendre des fourchettes, manger, puis les remettre et penser.
+. *Éviter les deadlocks et la famine :*
+** Assurez-vous de prévenir les deadlocks et la famine, par exemple, en adoptant une stratégie pour l'ordre de prise des fourchettes.
+
+Voici le code de démarrage :
+
+[source,java]
+----
+include::{sourcedir}/dev/craftlr/exercice6/Philosophe.java[lines=5..56]
+----
+
+[source,java]
+----
+include::{sourcedir}/dev/craftlr/exercice6/Fourchette.java[lines=3..11]
+----
+
+[source,java]
+----
+include::{sourcedir}/dev/craftlr/exercice6/DinerDesPhilosophes.java[]
+----
+
+== Questions de réflexion
+
+* Quelles stratégies avez-vous implémentées pour éviter les deadlocks et la famine ?
+* Comment la gestion des ressources (fourchettes) influence-t-elle le comportement du système ?
+
+== Conclusion
+
+Ce classique problème de synchronisation vous aide à comprendre et à gérer les complexités des environnements multi-threads.
+Les compétences acquises ici sont cruciales pour le développement d'applications parallèles fiables.

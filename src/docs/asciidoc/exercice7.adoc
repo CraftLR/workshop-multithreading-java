@@ -1,0 +1,46 @@
+:sourcedir: ../../main/java
+
+= Exercice 7 : Gestion d'un parking avec sémaphores
+
+== Objectif
+
+Utiliser un sémaphore pour gérer l'accès à un nombre limité de places de parking par des voitures (représentées par des threads).
+Le sémaphore limitera le nombre de voitures pouvant se garer simultanément.
+
+== Contexte
+
+Les sémaphores sont des mécanismes de synchronisation qui contrôlent l'accès à des ressources partagées par un nombre limité de threads.
+Les sémaphores sont représentés par la classe `java.util.concurrent.Semaphore`.
+
+== Fonctionnement des sémaphores
+
+Un sémaphore maintient un ensemble de permis (tickets) pour accéder à une ressource.
+Les threads demandent un permis pour accéder à la ressource et le rendent une fois leur tâche terminée.
+
+== Tâches à réaliser
+
+. *Définir le nombre de places :*
+** Créez une variable pour représenter le nombre de places disponibles dans le parking.
+. *Créer le sémaphore :*
+** Utilisez la classe `Semaphore` pour créer un sémaphore qui gère l'accès au parking.
+. *Simuler les voitures :*
+** Chaque thread représente une voiture essayant de se garer.
+** Une voiture doit attendre si le parking est plein.
+. *Gérer l'entrée et la sortie :*
+** Utilisez le sémaphore pour assurer que le nombre de voitures dans le parking ne dépasse pas la capacité.
+** Après un certain temps, la voiture quitte le parking, libérant une place.
+
+Voici le code de démarrage :
+[source,java]
+----
+include::{sourcedir}/dev/craftlr/exercice7/Parking.java[lines=5..36]
+----
+
+== Questions de réflexion
+
+* Comment le sémaphore facilite-t-il la gestion de l'accès concurrentiel au parking ?
+* Quel impact aurait la modification du nombre de places de parking ou le nombre de voitures sur le comportement du programme ?
+
+== Conclusion
+
+Ce scénario illustre l'utilisation des sémaphores pour contrôler l'accès à des ressources limitées dans un environnement multi-thread, montrant comment gérer les ressources partagées pour éviter les surcharges et assurer une utilisation équitable.

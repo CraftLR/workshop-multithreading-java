@@ -1,0 +1,84 @@
+:sourcedir: ../../main/java
+
+= Exercice 3 : Utilisation de `synchronized` pour la synchronisation
+
+== Objectif
+
+Cet exercice vise à apprendre à utiliser le mot-clé `synchronized` pour gérer l'accès concurrent à des ressources partagées et résoudre les problèmes de conditions de compétition rencontrés dans l'exercice précédent.
+
+== Contexte
+
+En Java, le mot-clé `synchronized` est un moyen simple et efficace de garantir que seul un thread à la fois peut exécuter un bloc de code donné ou accéder à une méthode d'un objet.
+Cela permet de prévenir les conditions de compétition lorsque plusieurs threads accèdent et modifient une même ressource.
+
+=== Qu'est-ce que `synchronized`?
+
+`Synchronized` est un mécanisme de synchronisation utilisé pour contrôler l'accès aux ressources partagées dans un environnement multi-thread.
+Il garantit que seulement un thread à la fois peut exécuter un bloc de code spécifique ou accéder à une méthode synchronisée, empêchant ainsi les conditions de compétition et les incohérences de données.
+
+=== Fonctionnement de `synchronized`
+
+Lorsqu'un thread entre dans un bloc de code `synchronized` ou une méthode `synchronized` d'un objet, il acquiert un verrou sur cet objet.
+Si un autre thread tente d'entrer dans un bloc ou une méthode `synchronized` sur le même objet, il doit attendre que le premier thread libère le verrou.
+
+=== Syntaxe de Base
+
+*Bloc Synchronized :*
+
+[,java]
+----
+synchronized (verrou) {
+    // Section critique : code qui accède à des ressources partagées
+}
+----
+
+*Méthode Synchronized :*
+
+[,java]
+----
+public synchronized void methodeCritique() {
+    // Code critique ici
+}
+----
+
+Ici, `verrou` est un objet sur lequel le verrou est placé.
+La section critique est le code qui nécessite un accès exclusif.
+
+=== Avantages de `synchronized`
+
+* *Simplicité :* L'utilisation de `synchronized` est simple à comprendre et met en œuvre un modèle de verrouillage sûr.
+* *Sécurité :* Il aide à éviter les conditions de compétition, garantissant la cohérence des données partagées.
+* *Gestion automatique des verrous :* Le verrou est automatiquement acquis et libéré par le runtime Java, ce qui réduit le risque d'erreurs.
+
+=== Considérations importantes
+
+* *Choix de l'objet de verrouillage :* Pour les blocs synchronisés, l'objet utilisé comme verrou doit être soigneusement choisi.
+* *Performance :* L'utilisation excessive de `synchronized` peut réduire la performance en limitant la concurrence.
+
+== Tâches à réaliser
+
+. *Modification du code de l'exercice précédent :*
+** Revisitez le code de l'exercice précédent où plusieurs threads incrémentent une variable partagée.
+. *Implémenter la synchronisation :*
+** Utilisez `synchronized` pour synchroniser l'accès à la variable partagée dans la méthode d'incrément.
+. *Tester et observer :*
+** Exécutez le programme modifié plusieurs fois et vérifiez la valeur finale de la variable partagée.
+
+Modifiez la méthode d'incrément comme suit :
+
+[source,java]
+----
+include::{sourcedir}/dev/craftlr/exercice3/Main.java[lines=3..31]
+----
+== Questions de réflexion
+
+* Comment le comportement du programme a-t-il changé après l'introduction de `synchronized` ?
+* La valeur finale de `variablePartagee` est-elle maintenant conforme à vos attentes ?
+Pourquoi ?
+* Modifier le code de l'exercice 2 et 3 pour mesurer l'impact de la synchronisation sur le temps de réponse du programme.
+
+== Conclusion
+
+Cet exercice illustre comment le verrouillage peut être utilisé avec le mot clé `synchronized`.
+La synchronisation permet d'éviter les conditions de concurrence en garantissant qu'un seul thread sera dans la section critique à la fois.
+Cette garantie ne se fait pas sans impact, car elle va réduire considérablement le niveau de parallélisme global du programme.

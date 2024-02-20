@@ -1,0 +1,57 @@
+:sourcedir: ../../main/java
+
+= Exercice 8 : Synchronisation de deux threads par rendez-vous
+
+== Objectif
+
+Créer un scénario où deux threads doivent se synchroniser à un point de rendez-vous avant de continuer leur exécution, illustrant la coordination entre threads dans les opérations concurrentes.
+
+== Contexte
+
+Un rendez-vous est une situation où deux ou plus de threads attendent les uns les autres à un certain point avant de poursuivre leur exécution.
+
+== Fonctionnement du rendez-vous
+
+Java offre plusieurs mécanismes pour implémenter des points de rendez-vous entre threads, tels que l'utilisation d'objets `CountDownLatch`, `CyclicBarrier`, ou `Phaser`, chacun ayant ses propres particularités adaptées à différents cas d'usage.
+
+== Tâches à réaliser
+
+. *Créer deux threads :*
+** Un thread pour "charger des données" et un autre pour "traiter des données".
+. *Point de rendez-vous :*
+** Utilisez un `CountDownLatch` pour synchroniser le thread de traitement afin qu'il attende que le thread de chargement ait terminé.
+. *Exécuter et observer :*
+** Lancez les threads et vérifiez que le traitement ne commence qu'après le chargement des données.
+
+Voici le code de démarrage :
+[source,java]
+----
+include::{sourcedir}/dev/craftlr/exercice8/Main.java[lines=5..37]
+----
+
+== Points clés
+
+* *`CountDownLatch` :* Utilisé ici comme un moyen simple de synchroniser deux threads.
+Le latch est initialisé avec un compte de 1, signifiant qu'un seul événement (le chargement des données) doit se produire avant que le thread de traitement puisse poursuivre.
+* *Chargement et Traitement :* Le thread de chargement simule un temps de chargement puis décrémente le latch, permettant au thread de traitement d'avancer.
+
+== Questions de réflexion
+
+* Quels sont les impacts de la synchronisation sur l'ordre d'exécution et l'utilisation des ressources ?
+* Comment le comportement des threads change-t-il lorsqu'ils atteignent le point de rendez-vous ?
+Avez-vous observé des différences dans l'ordre d'exécution avant et après le rendez-vous ?
+* Comment la synchronisation par rendez-vous affecte-t-elle l'utilisation des ressources partagées ?
+A-t-elle un impact sur la performance de l'application ?
+* Pouvez-vous imaginer d'autres stratégies de synchronisation pour atteindre le même objectif que le rendez-vous ?
+Quels seraient leurs avantages et inconvénients par rapport à la méthode que vous avez utilisée ?
+* Dans quelles situations un mauvais usage des mécanismes de rendez-vous pourrait-il conduire à un deadlock ?
+Comment pourriez-vous modifier votre code pour éviter ces deadlocks ?
+* Comment géreriez-vous un scénario où plusieurs threads doivent se rencontrer à différents points de rendez-vous ?
+Quels défis cela pourrait-il présenter ?
+* Pouvez-vous penser à des exemples concrets d'applications où les rendez-vous seraient essentiels ?
+Comment ces concepts s'appliquent-ils dans des scénarios réels ?
+
+== Conclusion
+
+Cet exercice montre comment synchroniser précisément des threads pour des opérations dépendantes, en utilisant `CountDownLatch` pour implémenter un point de rendez-vous.
+Cette technique est cruciale pour garantir la cohérence des données et l'ordre logique dans les applications multi-threads.

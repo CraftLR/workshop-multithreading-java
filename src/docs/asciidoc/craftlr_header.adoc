@@ -1,0 +1,7 @@
+image:https://raw.githubusercontent.com/CraftLR/workshop-git/main/src/main/resources/assets/logo.png[class logo]
+
+- Auteurs :
+** link:mailto:sebastien.nedjar@univ-amu.fr[Sébastien NEDJAR]
+- Besoin d'aide ?
+** Consulter et/ou créer des https://github.com/CraftLR/workshop-git/issues[issues].
+** link:mailto:sebastien.nedjar@univ-amu.fr[Email] pour toutes questions autres.
