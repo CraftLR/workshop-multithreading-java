@@ -9,7 +9,7 @@
 :source-language: java
 ifndef::includedir[:includedir: _includes]
 ifndef::sourcedir[:sourcedir: ../../main/java]
-include::locale/attributes.adoc[]
+include::{includedir}/locale/attributes.adoc[]
 
 include::{includedir}/craftlr_header.adoc[]
 
