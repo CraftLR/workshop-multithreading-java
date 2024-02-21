@@ -1,7 +1,5 @@
 = La Rochelle Software Craftsmenship
 :license-type: MIT
-:toc: macro
-:toclevels: 2
 :author: Sébastien NEDJAR
 :email: sebastien.nedjar@univ-amu.fr
 :source-highlighter: rouge
@@ -14,8 +12,6 @@ include::{includedir}/locale/attributes.adoc[]
 include::{includedir}/craftlr_header.adoc[]
 
 == Threads et synchronisation
-
-toc::[]
 
 include::{includedir}/apercu_du_workshop_et_objectifs_d_apprentissage.adoc[]
 
