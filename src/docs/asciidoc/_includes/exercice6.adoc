@@ -1,5 +1,5 @@
 
-:sourcedir: ../../main/java
+:sourcedir: ../../../main/java
 
 = Exercice 6 : Le Dîner des philosophes
 

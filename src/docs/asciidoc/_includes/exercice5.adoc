@@ -1,4 +1,4 @@
-:sourcedir: ../../main/java
+:sourcedir: ../../../main/java
 
 = Exercice 5 : Deadlocks et stratégies d'évitement
 

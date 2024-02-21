@@ -1,5 +1,5 @@
 = Exercice 1 : introduction aux threads
-:sourcedir: ../../main/java
+:sourcedir: ../../../main/java
 
 Cet exercice est conçu pour vous donner une première expérience pratique de la création et de la gestion de threads.
 

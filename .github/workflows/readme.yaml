@@ -15,6 +15,9 @@ jobs:
     steps:
       - name: Install asciidoctor-reducer
         run: sudo gem install asciidoctor-reducer --pre
+      
+      - name: Install rouge
+        run: sudo gem install rouge --pre
 
       - name: Checkout repository
         uses: actions/checkout@v4

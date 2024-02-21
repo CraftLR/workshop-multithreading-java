@@ -1,40 +1,41 @@
 = La Rochelle Software Craftsmenship
-:source-highlighter: rouge
-:rouge-style: github
-:source-language: java
-:sourcedir: ../../main/java
 :license-type: MIT
 :toc: preamble
 :toclevels: 2
 :author: Sébastien NEDJAR
 :email: sebastien.nedjar@univ-amu.fr
+:source-highlighter: rouge
+:rouge-style: github
+:source-language: java
+ifndef::includedir[:includedir: _includes]
+ifndef::sourcedir[:sourcedir: ../../main/java]
 
-include::craftlr_header.adoc[]
+include::{includedir}/craftlr_header.adoc[]
 
 == Threads et synchronisation
 
-include::aperçu_du_workshop_et_objectifs_d_apprentissage.adoc[]
+include::{includedir}/apercu_du_workshop_et_objectifs_d_apprentissage.adoc[]
 
-include::creation_fork_classroom.adoc[]
+include::{includedir}/creation_fork_classroom.adoc[]
 
 == Exercices
 
 :leveloffset: +2
 
-include::exercice1.adoc[]
+include::{includedir}/exercice1.adoc[]
 
-include::exercice2.adoc[]
+include::{includedir}/exercice2.adoc[]
 
-include::exercice3.adoc[]
+include::{includedir}/exercice3.adoc[]
 
-include::exercice4.adoc[]
+include::{includedir}/exercice4.adoc[]
 
-include::exercice5.adoc[]
+include::{includedir}/exercice5.adoc[]
 
-include::exercice6.adoc[]
+include::{includedir}/exercice6.adoc[]
 
-include::exercice7.adoc[]
+include::{includedir}/exercice7.adoc[]
 
-include::exercice8.adoc[]
+include::{includedir}/exercice8.adoc[]
 
 :leveloffset: -2
