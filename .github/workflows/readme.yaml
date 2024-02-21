@@ -3,7 +3,7 @@ name: Build readme
 on:
   push:
     paths:
-      - src/docs/asciidoc/readme-source.adoc
+      - src/docs/asciidoc/*.adoc
     branches:
       - '**'
 
