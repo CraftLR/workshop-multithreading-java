@@ -1,6 +1,6 @@
 = La Rochelle Software Craftsmenship
 :license-type: MIT
-:toc: preamble
+:toc: macro
 :toclevels: 2
 :author: Sébastien NEDJAR
 :email: sebastien.nedjar@univ-amu.fr
@@ -38,6 +38,8 @@ image:https://raw.githubusercontent.com/CraftLR/workshop-git/main/src/main/resou
 ** link:mailto:sebastien.nedjar@univ-amu.fr[Email] pour toutes questions autres.
 
 == Threads et synchronisation
+
+toc::[]
 
 === Aperçu du workshop et objectifs d'apprentissage
 
