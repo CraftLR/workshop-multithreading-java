@@ -9,6 +9,25 @@
 :source-language: java
 :includedir: _includes
 :sourcedir: ../../main/java
+:appendix-caption: Annexe
+:appendix-refsig: {appendix-caption}
+:caution-caption: Attention
+:chapter-signifier: Chapitre
+:chapter-refsig: {chapter-signifier}
+:example-caption: Exemple
+:figure-caption: Figure
+:important-caption: Important
+:last-update-label: Dernière mise à jour
+:note-caption: Note
+:part-signifier: Partie
+:part-refsig: {part-signifier}
+:section-refsig: Section
+:table-caption: Tableau
+:tip-caption: Astuce
+:toc-title: Table des matières
+:untitled-label: Sans titre
+:version-label: Version
+:warning-caption: Avertissement
 
 image:https://raw.githubusercontent.com/CraftLR/workshop-git/main/src/main/resources/assets/logo.png[class logo]
 
