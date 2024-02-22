@@ -7,7 +7,6 @@ on:
     branches:
       - '**'
 
-
 jobs:
   build:
     timeout-minutes: 10
@@ -21,6 +20,14 @@ jobs:
 
       - name: Install asciidoctor-diagram
         run: sudo gem install asciidoctor-diagram --pre
+
+      - uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'zulu'
+          java-package: 'jdk+fx'
+          cache: maven
+          check-latest: true
 
       - name: Checkout repository
         uses: actions/checkout@v4
