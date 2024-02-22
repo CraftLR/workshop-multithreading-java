@@ -92,6 +92,12 @@ Vous apparaîtrez automatiquement comme contributeur de ce projet pour y pousser
 
 Cet exercice est conçu pour vous donner une première expérience pratique de la création et de la gestion de threads.
 
+[plantuml,svg,opts="inline",svg-type="inline"]
+----
+IHM -> Service : getData
+Service <->  DAO : save
+----
+
 == Objectif
 
 Votre tâche est de créer un programme simple qui lance plusieurs threads exécutant des tâches différentes en parallèle.
