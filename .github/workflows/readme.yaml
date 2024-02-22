@@ -3,7 +3,7 @@ name: Build readme
 on:
   push:
     paths:
-      - src/docs/asciidoc/*.adoc
+      - src/docs/asciidoc/**
     branches:
       - '**'
 
@@ -18,6 +18,9 @@ jobs:
       
       - name: Install rouge
         run: sudo gem install rouge --pre
+
+      - name: Install asciidoctor-diagram
+        run: sudo gem install asciidoctor-diagram --pre
 
       - name: Checkout repository
         uses: actions/checkout@v4
