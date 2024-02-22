@@ -1,6 +1,5 @@
-:sourcedir: ../../../main/java
-
 = Exercice 8 : Synchronisation de deux threads par rendez-vous
+:sourcedir: ../../../main/java
 
 == Objectif
 

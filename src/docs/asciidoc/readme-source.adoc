@@ -5,6 +5,7 @@
 :source-highlighter: rouge
 :rouge-style: github
 :source-language: java
+:toclevels: 2
 ifndef::includedir[:includedir: _includes]
 ifndef::sourcedir[:sourcedir: ../../main/java]
 include::{includedir}/locale/attributes.adoc[]

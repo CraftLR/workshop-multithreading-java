@@ -1,5 +1,5 @@
-:sourcedir: ../../../main/java
 = Exercice 2 : Partage de Ressources entre Threads
+:sourcedir: ../../../main/java
 
 == Objectif
 

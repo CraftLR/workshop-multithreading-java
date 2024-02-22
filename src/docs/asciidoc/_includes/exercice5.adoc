@@ -1,6 +1,6 @@
+= Exercice 5 : Deadlocks et stratégies d'évitement
 :sourcedir: ../../../main/java
 
-= Exercice 5 : Deadlocks et stratégies d'évitement
 
 == Objectif
 

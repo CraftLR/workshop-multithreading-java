@@ -1,6 +1,5 @@
-:sourcedir: ../../../main/java
-
 = Exercice 7 : Gestion d'un parking avec sémaphores
+:sourcedir: ../../../main/java
 
 == Objectif
 

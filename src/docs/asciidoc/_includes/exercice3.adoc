@@ -1,6 +1,5 @@
-:sourcedir: ../../../main/java
-
 = Exercice 3 : Utilisation de `synchronized` pour la synchronisation
+:sourcedir: ../../../main/java
 
 == Objectif
 
