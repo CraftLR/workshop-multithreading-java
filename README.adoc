@@ -5,6 +5,7 @@
 :source-highlighter: rouge
 :rouge-style: github
 :source-language: java
+:toclevels: 2
 :includedir: _includes
 :sourcedir: ../../main/java
 :appendix-caption: Annexe
@@ -29,9 +30,9 @@
 
 image:https://raw.githubusercontent.com/CraftLR/workshop-git/main/src/main/resources/assets/logo.png[class logo]
 
-- Auteurs :
+- **Auteurs :**
 ** link:mailto:sebastien.nedjar@univ-amu.fr[Sébastien NEDJAR]
-- Besoin d'aide ?
+- **Besoin d'aide ?**
 ** Consulter et/ou créer des https://github.com/CraftLR/workshop-git/issues[issues].
 ** link:mailto:sebastien.nedjar@univ-amu.fr[Email] pour toutes questions autres.
 
@@ -185,8 +186,8 @@ public class Main {
 
 Ce premier exercice vous permet de voir concrètement comment les threads peuvent s'exécuter en parallèle, chacun effectuant ses propres opérations de manière indépendante.
 
-:sourcedir: ../../../main/java
 = Exercice 2 : Partage de Ressources entre Threads
+:sourcedir: ../../../main/java
 
 == Objectif
 
@@ -247,9 +248,8 @@ Cette activité vise à illustrer l'importance de la synchronisation dans les pr
 Les variations inattendues dans les résultats sont dues à des accès concurrents non synchronisés à la même ressource, menant à des conditions de compétition.
 Dans le prochain exercice, vous apprendrez comment résoudre ce problème.
 
-:sourcedir: ../../../main/java
-
 = Exercice 3 : Utilisation de `synchronized` pour la synchronisation
+:sourcedir: ../../../main/java
 
 == Objectif
 
@@ -353,9 +353,8 @@ Cet exercice illustre comment le verrouillage peut être utilisé avec le mot cl
 La synchronisation permet d'éviter les conditions de concurrence en garantissant qu'un seul thread sera dans la section critique à la fois.
 Cette garantie ne se fait pas sans impact, car elle va réduire considérablement le niveau de parallélisme global du programme.
 
-:sourcedir: ../../../main/java
-
 = Exercice 4 : Synchronisation avec `Object`
+:sourcedir: ../../../main/java
 
 == Objectif
 
@@ -499,9 +498,9 @@ Dans quelles situations utiliseriez-vous l'un plutôt que l'autre ?
 
 Cet exercice vous a introduit à la gestion avancée de la synchronisation, montrant comment utiliser `synchronized` avec `wait()` et `notify()` pour contrôler l'accès concurrent aux ressources partagées et coordonner les actions entre threads.
 
+= Exercice 5 : Deadlocks et stratégies d'évitement
 :sourcedir: ../../../main/java
 
-= Exercice 5 : Deadlocks et stratégies d'évitement
 
 == Objectif
 
@@ -586,10 +585,8 @@ public class Main {
 Cet exercice vous a sensibilisé aux problèmes de deadlocks en programmation multi-thread et vous a équipé de stratégies pour les détecter et les éviter.
 La compréhension des deadlocks et leur prévention sont essentielles pour développer des applications multi-threads robustes et fiables.
 
-
-:sourcedir: ../../../main/java
-
 = Exercice 6 : Le Dîner des philosophes
+:sourcedir: ../../../main/java
 
 == Objectif
 
@@ -702,9 +699,8 @@ public class DinerDesPhilosophes {
 Ce classique problème de synchronisation vous aide à comprendre et à gérer les complexités des environnements multi-threads.
 Les compétences acquises ici sont cruciales pour le développement d'applications parallèles fiables.
 
-:sourcedir: ../../../main/java
-
 = Exercice 7 : Gestion d'un parking avec sémaphores
+:sourcedir: ../../../main/java
 
 == Objectif
 
@@ -780,9 +776,8 @@ public class Parking {
 
 Ce scénario illustre l'utilisation des sémaphores pour contrôler l'accès à des ressources limitées dans un environnement multi-thread, montrant comment gérer les ressources partagées pour éviter les surcharges et assurer une utilisation équitable.
 
-:sourcedir: ../../../main/java
-
 = Exercice 8 : Synchronisation de deux threads par rendez-vous
+:sourcedir: ../../../main/java
 
 == Objectif
 
